@@ -10,10 +10,10 @@
     <%= javascript_importmap_tags %>
   </head>
   <div class="container-flouid">
-      <nav class="navbar navbar-expand-lg bg-dark border-bottom border-body" data-bs-theme="dark"">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3" style="height: 90px;" data-bs-theme="dark" >
       <div class="container">
-        <a class="navbar-brand" href="/">
-        <h3>Civic Test Tracker</h3>
+        <a class="navbar-brand" href="/" >
+          <%= image_tag 'CIVIC.svg', alt: 'CivcTestTracker', lass: "logo-img"%>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -49,7 +49,15 @@
     <%= yield %>
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
-      <p class="navbar-text float-right">
-</p>
+      <p class="navbar-text float-right"></p>
+
+    <div class="mt-auto text-center py-4">
+      <%= image_tag 'civictesttracker.svg', alt: 'CivicTestTracker', width: "300", height: "300" %>
+    </div>
+    <footer class="bg-dark text-white mt-5 py-4 fixed-bottom">
+      <div class="container text-center">
+        <p class="mb-0">© <%= Time.current.year %> Civic Test Tracker - Made with Love and Ruby </p>
+      </div>
+    </footer>
   </body>
 </html>

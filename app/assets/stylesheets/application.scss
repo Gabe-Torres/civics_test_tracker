@@ -14,3 +14,9 @@
  *= require_self
  */
  @import "bootstrap";
+
+ .logo-img {
+  max-height: 48px;
+  height: auto;
+  width: auto;
+}

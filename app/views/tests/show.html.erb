@@ -1,0 +1,8 @@
+<h1 class="card-title"><%= @test.title %></h1>
+
+<% @test.questions.each do |question| %>
+  <section id="question-<%= question.id %>">
+    <h1><%= question.question_text %></h1>
+      <p><%= question.answer %></p>
+  </section>
+<% end %>

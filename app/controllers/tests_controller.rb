@@ -1,6 +1,7 @@
 class TestsController < ApplicationController
   def show
     @test = Test.find(params[:id])
+    @pagy, @questions = pagy(@test.questions, items: 1)
   end
 
   def index

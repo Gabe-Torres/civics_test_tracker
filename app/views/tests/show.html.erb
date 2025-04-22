@@ -1,8 +1,46 @@
 <h1 class="card-title"><%= @test.title %></h1>
 
-<% @test.questions.each do |question| %>
-  <section id="question-<%= question.id %>">
-    <h1><%= question.question_text %></h1>
-      <p><%= question.answer %></p>
-  </section>
-<% end %>
+<div class="container">
+  <div class="row">
+    <% @questions.each do |question| %>
+      <!-- Individual Card -->
+      <input type="checkbox" id="card-<%= question.id %>"/>
+      <label class="col-md-4 card-container" for="card-<%= question.id %>">
+        <section id="question-<%= question.id %>">
+          <div class="card-flip">
+            <!-- Card Front -->
+            <div class="card front">
+              <span class="fa fa-4x fa-smile-o text-center"></span>
+              <div class="card-block">
+                <h4 class="card-title text-center">Question: <%= question.id %></h4>
+                <!-- <h6 class="card-subtitle mb-2 text-muted text-center">Front Card subtitle</h6> -->
+                <p class="card-text"><%= question.question_text %></p>
+              </div>
+            </div>
+            <!-- End Card Front -->
+
+            <!-- Card Back -->
+            <div class="card back">
+              <div class="card-block">
+                <h4 class="card-title">Back Card Title</h4>
+                <h6 class="card-subtitle mb-2 text-muted">Back Card subtitle</h6>
+                <p class="card-text"><%= question.answer %></p>
+                <!-- <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a> -->
+              </div>
+            </div>
+            <!-- End Card Back -->
+          </div>
+        </section>
+      </label>
+      <!-- End Individual Card -->
+    <% end %>
+  </div>
+</div>
+
+
+  <div class="pagination-controls text-center mt-4">
+    <%== pagy_bootstrap_nav(@pagy) if @pagy.pages > 1 %>
+  </div>
+</div>
+
